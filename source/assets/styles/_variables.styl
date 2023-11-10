@@ -1,0 +1,23 @@
+clearfix()
+	&:after
+		content: '';
+		display: table;
+		clear: both;
+
+ellipsis()
+	max-width 100%
+	overflow hidden
+	text-overflow ellipsis
+	white-space nowrap
+
+// font-family
+$sfProDisplay = 'SF Pro Display', 'Helvetica', 'Arial', sans-serif
+$sfProDisplayLight = 'SF Pro Display Light', 'Helvetica', 'Arial', sans-serif
+$sfProDisplayMedium = 'SF Pro Display Medium', 'Helvetica', 'Arial', sans-serif
+$sfProDisplaySemibold = 'SF Pro Display Semibold', 'Helvetica', 'Arial', sans-serif
+
+// media-queries
+$desktop = 'screen and (max-width: 1240px)'
+$tablet = 'screen and (max-width: 1024px)'
+$phone = 'screen and (max-width: 768px)'
+$smallphone = 'screen and (max-width: 350px)'
