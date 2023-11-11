@@ -22,7 +22,9 @@ html.no-js
 							label.topbar-title
 								strong Хотите попробовать бесплатно?
 								span.tablet-hide Предложим решение специально для вас
-							input.text.dark(type="text" placeholder="Телефон для связи")
+							.input-wrap
+								input.text.dark(type="text" placeholder="Телефон для связи")
+								input.reset(type="reset" value="")
 							+btnBtn("Позвоните мне")
 						span.topbar-closer X
 					a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
@@ -46,10 +48,12 @@ html.no-js
 									a(href="") Приложение
 								li
 									a(href="") Цены
-								li.topnav-login.phone-show
-									+btn("Войти").with-border.topnav-login
+								block loginPhone
+									li.topnav-login.phone-show
+										+btn("Войти").with-border.topnav-login
 								li.topnav-phone.phone-show 8 (800) 302-32-09
-						+btn("Войти").with-border.topnav-login.phone-hide
+						block login
+							+btn("Войти").with-border.topnav-login.phone-hide
 						span.topnav-phone.phone-hide 8 (800) 302-32-09
 		
 		section.h-content-wrap

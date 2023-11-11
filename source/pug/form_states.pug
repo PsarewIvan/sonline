@@ -1,0 +1,120 @@
+extends _default
+
+block topbarStates
+	br
+	
+	.h-topbar-wrap.phone-hide
+		.h-fixed
+			.topbar-center.phone-hide
+				form.reg(action="")
+					label.topbar-title.tablet-hide
+						strong Хотите попробовать бесплатно?
+						span.tablet-hide Предложим решение специально для вас
+					.checkbox-custom-wrap
+						label
+							input.checkbox(type="checkbox")
+							span.checkbox-view
+							span.checkbox-copy Даю согласие на 
+								a(href="") обработку персональных данных
+					.captcha
+						img(src="../f/i/recaptcha.png" width="312" height="86")
+				span.topbar-closer X
+			a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
+	
+	br
+
+	.h-topbar-wrap.phone-hide
+		.h-fixed
+			.topbar-center.phone-hide
+				form.reg(action="")
+					.topbar-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас
+				span.topbar-closer X
+			a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
+
+
+block content 
+
+	.b-offer-wrap
+		.h-fixed
+			.offer-copy
+				h1 Программа для салона красоты
+					br.tablet-show
+					|  с онлайн-записью
+				ul.offer-list
+					li Онлайн запись с сайта, соц. сетей, поисковиков
+					li Функционал для привлечения и удержания клиентов
+					li Учет товаров, расчёт зарплаты, финансы и аналитика
+					li Мобильная версия с максимальным функционалом
+					li Обучение, консультации в личном чате
+				form.offer-form(action="")
+					label.offer-form__arrow
+						strong Хотите попробовать бесплатно?
+						| Предложим решение специально для вас
+					.input-wrap
+						input.text(type="text" placeholder="Телефон для связи")
+						input.reset(type="reset" value="")
+					+btnBtn("Позвоните мне")
+
+				br
+
+				form.offer-form(action="")
+					label.offer-form__arrow
+						strong Хотите попробовать бесплатно?
+						| Предложим решение специально для вас
+					.offer-form__checkbox-holder
+						.checkbox-custom-wrap
+							label
+								input.checkbox(type="checkbox")
+								span.checkbox-view
+								span.checkbox-copy Даю согласие на 
+									a(href="") обработку персональных данных
+					.captcha
+						img(src="../f/i/recaptcha.png" width="312" height="86")
+
+				br
+
+				form.offer-form(action="")
+					.offer-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас
+
+	.b-section-wrap.b-prices-wrap
+		.h-fixed
+			.section-title
+				h2.section-h2 Цены на основные тарифы
+				.section-copy Вы можете вернуть 150% стоимости программы*
+			block tariffStates
+				ul.prices-list
+					li
+						.prices-list__card
+							h4 Мастер
+							.prices-list__card-dop 1 специалист**
+							.prices-list__card-hr
+							.prices-list__card-period
+								strong 3 000 ₽
+								|  за 12 месяцев
+							.prices-list__card-discount
+								strong 3 месяца в подарок
+								|  при первом подключении
+							+btn("Купить")
+					li
+						.prices-list__card
+							h4 Укажите телефон для связи
+							.prices-list__card-hr
+							.prices-list__card-form
+								fieldset.form-fieldset__wrap
+									.input-wrap
+										input.text(type="text" placeholder="Телефон для связи")
+										input.reset(type="reset" value="")
+								fieldset.form-fieldset__wrap
+									.checkbox-custom-wrap
+										label
+											input.checkbox(type="checkbox")
+											span.checkbox-view
+											span.checkbox-copy Даю согласие на 
+												a(href="") обработку персональных данных
+								.captcha
+									img(src="../f/i/recaptcha.png" width="100%")
+								+btnBtn("Свяжитесь со мной")
+					li
+						.prices-list__card
+							.prices-list__card-form
+								.prices-list__card-form-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас

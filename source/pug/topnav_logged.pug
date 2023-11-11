@@ -1,0 +1,15 @@
+extends _default
+
+block login
+	.topnav-logged.phone-hide
+		span.topnav-logged__username UserName
+		a.topnav-logged__sign-out(href="")
+			i.ph-bold.ph-sign-out
+
+
+block loginPhone
+	li.topnav-login.phone-show
+		.topnav-logged
+			span.topnav-logged__username UserName
+			a.topnav-logged__sign-out(href="")
+				i.ph-bold.ph-sign-out
