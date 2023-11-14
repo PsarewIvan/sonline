@@ -113,8 +113,6 @@ input.text
 		left 0
 	input.checkbox
 		display block
-		width 100%
-		height 100%
 		opacity 0
 		position absolute
 		top 0
@@ -129,7 +127,12 @@ input.text
 			border-color #C2C2C2
 	.checkbox-copy
 		a
-			color #5DC6FE
+			color #0190DB
+.h-topbar-wrap
+	.checkbox-custom-wrap
+		.checkbox-copy
+			a
+				color #5DC6FE
 
 
 .h-fixed
@@ -167,6 +170,7 @@ input.text
 	.reg
 		display flex
 		align-items center
+		justify-content space-between
 		width calc(100% - 72px)
 		.topbar-title
 			flex-shrink 0
@@ -193,9 +197,10 @@ input.text
 			width 180px
 			height 48px
 			padding 8px 0
+			&.send
+				width 150px
 		.captcha
 			flex-shrink 0
-			margin-left auto
 			img
 				display block
 	.topbar-closer
@@ -503,6 +508,8 @@ input.text
 		height 56px
 		display flex
 		align-items center
+	.offer-form__btn-wrap
+		width 100%
 	.offer-result
 		display flex
 		align-items center
@@ -601,6 +608,8 @@ input.text
 .functionality-cols
 	&-wrap-overfow
 		overflow-y hidden
+		@media $phone
+			margin-bottom -116px
 .functionality-col
 	&__list
 		columns 5
@@ -642,6 +651,10 @@ input.text
 				.functionality-col__list-img
 					@media $phone
 						display none
+			.break-phone
+				@media $phone
+					-webkit-column-break-before always
+					column-break-before always
 			&:nth-child(4)
 			&:nth-child(10)
 				padding-top 124px

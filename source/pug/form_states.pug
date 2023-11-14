@@ -7,17 +7,15 @@ block topbarStates
 		.h-fixed
 			.topbar-center.phone-hide
 				form.reg(action="")
-					label.topbar-title.tablet-hide
-						strong Хотите попробовать бесплатно?
-						span.tablet-hide Предложим решение специально для вас
 					.checkbox-custom-wrap
 						label
 							input.checkbox(type="checkbox")
 							span.checkbox-view
 							span.checkbox-copy Даю согласие на 
-								a(href="") обработку персональных данных
+								a(href="https://ya.ru/") обработку персональных данных
 					.captcha
 						img(src="../f/i/recaptcha.png" width="312" height="86")
+					+btnBtn("Отправить").send
 				span.topbar-closer X
 			a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
 	
@@ -67,9 +65,11 @@ block content
 								input.checkbox(type="checkbox")
 								span.checkbox-view
 								span.checkbox-copy Даю согласие на 
-									a(href="") обработку персональных данных
+									a(href="https://ya.ru/") обработку персональных данных
 					.captcha
 						img(src="../f/i/recaptcha.png" width="312" height="86")
+					.offer-form__btn-wrap
+						+btnBtn("Отправить").send
 
 				br
 
