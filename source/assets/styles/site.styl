@@ -403,7 +403,7 @@ input.text
 		padding 48px 0 520px
 		min-height auto
 	@media $phone
-		padding 32px 0 503px
+		padding 32px 0
 	&:before
 		display block
 		content ""
@@ -426,8 +426,11 @@ input.text
 			background-size 948px 668px
 		@media $phone
 			left 0
-			bottom -77px
+			bottom auto
+			top 0
 			transform translateX(-97px)
+		@media $smallphone
+			top 32px
 .offer-copy
 	width 480px
 	position relative
@@ -442,6 +445,9 @@ input.text
 		@media $phone
 			font-size 2.4rem
 			line-height 3.2rem
+			margin-bottom 510px
+		@media $smallphone
+			max-width 290px
 .offer-list
 	padding 0 0 36px
 	li
@@ -526,14 +532,12 @@ input.text
 	@media $tablet
 		padding 0 0 36px
 	@media $phone
-		padding 0 0 52px
+		padding 0 0 20px
 .advantages-list
 	display flex
 	justify-content space-between
 	@media $tablet
 		flex-wrap wrap
-	@media $phone
-		display block
 	li
 		width calc(25% - 9px)
 		border-radius 12px
@@ -542,19 +546,25 @@ input.text
 		@media $tablet
 			margin 0 0 12px
 			width calc(50% - 6px)
-		@media $phone
-			width 100%
 	&__inner
 		padding 32px
+		@media $phone
+			padding 16px
 	&__title
 		font-size 4.8rem
 		line-height 6.4rem
 		font-weight 700
 		display block
+		@media $phone
+			font-size 2.8rem
+			line-height 4rem
 	&__copy
 		font-size 2rem
 		line-height 2.8rem
 		display block
+		@media $phone
+			font-size 1.4rem
+			line-height 2rem
 
 .b-section-wrap
 	padding 64px 0
@@ -829,7 +839,9 @@ input.text
 		@media $tablet
 			width calc(50% - 6px)
 			margin-bottom 12px
-			min-height 356px
+			padding-bottom 0
+			min-height 236px
+			overflow hidden
 		@media $phone
 			width 100%
 			min-height auto
@@ -869,6 +881,12 @@ input.text
 			background rgba(0, 164, 59, 0.32)
 	&__inner
 		padding 24px
+		@media $tablet
+			padding 24px 24px 48px 48px
+			position relative
+			z-index 1
+		@media $phone
+			padding-bottom 24px
 		h4
 			font-size 2rem
 			line-height 2.8rem
@@ -883,8 +901,11 @@ input.text
 		font-weight 700
 		line-height 16rem
 		color #fff
-		@media $phone
-			display none
+		@media $tablet
+			bottom auto
+			right auto
+			top 0
+			left -24px
 
 .b-integration-wrap
 	padding 0 0 64px
@@ -1155,7 +1176,7 @@ input.text
 	li
 		box-sizing border-box
 		width calc(33.333% - 6px)
-		border 1px solid #C2C2C2
+		box-shadow 0px 8px 32px 0px rgba(0, 0, 0, 0.04), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 240px 120px 0px rgba(0, 0, 0, 0.00)
 		border-radius 12px
 		@media $phone
 			width 100%
@@ -1180,6 +1201,10 @@ input.text
 			font-size 3.6rem
 			line-height 4.8rem
 			font-weight 700
+			@media $tablet
+				display block
+			@media $phone
+				display inline
 	&__card-discount
 		font-size 1.4rem
 		line-height 2rem
