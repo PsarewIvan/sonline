@@ -150,7 +150,7 @@ input.text
 		background #fff
 		position sticky
 		top 0
-		z-index 1
+		z-index 100
 
 .h-topbar-wrap
 	background rgba(0,0,0,.76)
@@ -775,17 +775,34 @@ input.text
 				width 284px
 		&.act1
 			background #D6F0E0
+			img
+				@media $phone
+					max-width 326px
+					margin-left 90px
 		&.act2
 			background #D6ECF7
+			img
+				@media $phone
+					max-width 326px
+					margin-bottom -35px
+					margin-left 90px
 		&.act3
 			background #EBEAF6
+			.actions-list__inner
+				padding-bottom 24px
 			.actions-list__img
+				@media $phone
+					display none
 				img
 					@media $tablet
 						max-width 328px
 		&.act4
 			background #FFF5D6
+			.actions-list__inner
+				padding-bottom 24px
 			.actions-list__img
+				@media $phone
+					display none
 				img
 					@media $tablet
 						max-width 328px
@@ -796,8 +813,11 @@ input.text
 				img
 					@media $tablet
 						max-width 352px
+					@media $phone
+						max-width 236px
+						margin-bottom -133px
 	&__inner
-		padding 24px
+		padding 24px 24px 0
 		h3
 			font-size 2rem
 			line-height 2.8rem
@@ -807,12 +827,8 @@ input.text
 		padding 0 24px
 		@media $phone
 			padding 0
-			margin-left 250px
 		&.no-padd
 			padding 0
-			@media $phone
-				margin-left 0
-				margin-right -70px
 		img
 			display block
 			max-width 100%
@@ -951,6 +967,8 @@ input.text
 		white-space nowrap
 		@media $tablet
 			margin-left auto
+		@media $phone
+			width 100%
 
 .b-clients-wrap
 	@media $phone
