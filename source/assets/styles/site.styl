@@ -147,10 +147,11 @@ input.text
 
 .h-header
 	&.header-sticky
-		background #fff
-		position sticky
-		top 0
-		z-index 100
+		@media $tablet
+			background #fff
+			position sticky
+			top 0
+			z-index 100
 
 .h-topbar-wrap
 	background rgba(0,0,0,.76)
