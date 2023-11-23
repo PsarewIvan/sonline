@@ -661,11 +661,11 @@ input.text
 				.functionality-col__list-img
 					@media $phone
 						display none
-			.break-phone
+			&.break-phone
 				@media $phone
 					-webkit-column-break-before always
 					column-break-before always
-					break-before always
+					break-before column
 			&:nth-child(4)
 			&:nth-child(10)
 				padding-top 124px
