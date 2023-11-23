@@ -316,13 +316,16 @@ input.text
 		@media $tablet
 			box-sizing border-box
 			position fixed
-			top 0
+			top 192px
 			left 0
 			z-index 1
 			padding 0
 			width 100%
 			display block
 			background #fff
+			overflow auto
+		@media $phone
+			top 144px
 		li
 			@media $tablet
 				height 0
@@ -348,10 +351,10 @@ input.text
 						transform rotate(-405deg)
 		& ~ .topnav-list
 			@media $tablet
-				height 100%
-				padding 184px 0 24px
+				height calc(100% - 192px)
+				padding 0
 			@media $phone
-				padding-top 168px
+				height calc(100% - 144px)
 			li
 				@media $tablet
 					opacity 1
