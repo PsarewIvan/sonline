@@ -76,6 +76,31 @@ block content
 				form.offer-form(action="")
 					.offer-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас
 
+	.b-integration-wrap
+		.h-fixed
+			.section-title
+				h3.section-h3 Внедрение за 3 дня
+			form.integration-form(action="")
+				label
+					strong Хотите попробовать бесплатно?
+					span.tablet-hide Предложим решение специально для вас
+				input.text(type="text" placeholder="Телефон для связи")
+				+btnBtn("Позвоните мне")
+
+			form.integration-form(action="")
+				.checkbox-custom-wrap
+					label
+						input.checkbox(type="checkbox")
+						span.checkbox-view
+						span.checkbox-copy Даю согласие на 
+							a(href="https://ya.ru/") обработку персональных данных
+				.captcha
+					img(src="../f/i/recaptcha.png" width="312" height="86")
+				+btnBtn("Отправить").send
+
+			form.integration-form(action="")
+				.integration-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас 
+
 	.b-section-wrap.b-prices-wrap
 		.h-fixed
 			.section-title
