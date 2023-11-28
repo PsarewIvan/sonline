@@ -148,6 +148,7 @@ input.text
 .h-header
 	&.header-sticky
 		background #fff
+		box-shadow 0px 8px 32px 0px rgba(0, 0, 0, 0.04), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 240px 120px 0px rgba(0, 0, 0, 0.00)
 		position sticky
 		top 0
 		z-index 100
@@ -401,12 +402,17 @@ input.text
 			font-size 3.2rem
 
 
+.h-content-wrap
+	overflow hidden
+
+
 .b-offer-wrap
 	box-sizing border-box
-	padding 99px 0 64px
-	min-height 634px
+	min-height calc(100vh - 184px)
 	position relative
-	overflow hidden
+	display flex
+	align-items center
+	justify-content center
 	@media $tablet
 		padding 48px 0 520px
 		min-height auto
@@ -417,16 +423,18 @@ input.text
 		content ""
 		width 1072px
 		height 756px
+		max-height 140%
 		position absolute
-		top -64px
+		top 50%
 		left 50%
 		z-index -1
-		transform translateX(-224px)
+		transform translate(-150px, -50%)
 		background url(../i/offer-mockup.png) 0 0 no-repeat
-		background-size 1072px 756px
+		background-size auto 100%
 		@media $tablet
 			width 948px
 			height 668px
+			max-height none
 			background-size cover
 			top auto
 			bottom -60px
@@ -439,6 +447,14 @@ input.text
 			transform translateX(-97px)
 		@media $smallphone
 			top 32px
+	.h-fixed
+		box-sizing border-box
+		width 100%
+		padding-top 20px
+		padding-bottom 20px
+		@media $tablet
+			padding-top 0
+			padding-bottom 0
 .offer-copy
 	width 480px
 	position relative
@@ -536,11 +552,11 @@ input.text
 		color #2B9927
 
 .b-advantages-wrap
-	padding 0 0 64px
+	padding 64px 0
 	@media $tablet
-		padding 0 0 36px
+		padding 36px 0
 	@media $phone
-		padding 0 0 20px
+		padding 20px 0
 .advantages-list
 	display flex
 	justify-content space-between
@@ -1220,10 +1236,13 @@ input.text
 		box-sizing border-box
 		width calc(33.333% - 6px)
 		box-shadow 0px 8px 32px 0px rgba(0, 0, 0, 0.04), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 240px 120px 0px rgba(0, 0, 0, 0.00)
+		border 2px solid #E63946
 		border-radius 12px
 		@media $phone
 			width 100%
 			margin 0 0 12px
+		&.result
+			border-color #2B9927
 	&__card
 		box-sizing border-box
 		padding 24px
@@ -1567,6 +1586,80 @@ input.text
 		margin 0 0 12px
 		a
 			color #fff
+
+
+.modal-popup
+	&-wrap
+		width 100%
+		height 100%
+		box-sizing border-box
+		padding-top 32px
+		position fixed
+		top 0
+		left 0
+		z-index 9999
+		background rgba(0,0,0,.32)
+		overflow auto
+	&-inner
+		min-height 100%
+		display flex
+		flex-direction column
+		background #fff
+		border-radius 12px 12px 0 0
+		width 100%
+	&-header
+		padding 16px 0
+		position relative
+		min-height 48px
+		h2
+			margin 0 48px 4px 0
+			font-size 2rem
+			line-height 2.8rem
+			font-weight 700
+			&.reg-result-icon
+				width 64px
+				height 64px
+				background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAqFBMVEUAAAAgnyApmSMrlicrmycqmScrmiYrmScsmScrmScrmicolyQolyArmiYqlyUolygqmyYllSUrmSYrmCYqlygqlSoslygtmSYsmCcrmCcrmigrmScsmicslygrmScrlygrmScqlSUsmScwnyAqlygrnCYpmScqlyYslyYqmCUqmiUolygqmCcqmCcpnCEqmicqmiYslyQplyYpliYrmScsmyYsmCcrmCcQJE8TAAAAOHRSTlMAEFBwj6/P3+//v0Agn2AgfzDPn2AwQFCvv5+Pb4DvoHAwrxCAX3CAgJAwQJCwH6+fQKBQz3+Q377fOP4AAAPWSURBVHgB7ZrXmuo4EITbR4DcIoggPERP8Mk5THj/N1uPNu8CpZasufJ/iz+qXN0tJ1FPHD09PT09PcUrNRiOdMktpTbDgRoX9FJM1FTzCfRwZik747nmC4wGi6zBz5cMGWXLwQ5K/pNyuVJubQtvy1ZXarPlv5naHPK7v8S3qqITVGqbz0Kx5z/YuuLCYW6Tx8KhZE95LGBSTrNHz7pL37BnW1EQf1owttPT115eZEHPuqt+eSQRx5qf2afHP2KfvjhNe83PjGyivs+yvKEIbnwIOsnBukT/gd3r21T9u4Iiae64pb5N039NCRxTHFiBPnBgIyuI9THH6C4S6GMHIxKzl+hjB3sS4nz/Uyf4WXgT0YC6oE5otLwRDTOXljrC1sxsxAW4oc644Za3wgmckhSQaN1QKDtcgJgivAs+Wj6BkPfcYgUBaOoYX1VBADPqmApHAANI78MPWQMAVKGD4KIDANSBa4FOCgAMgiHIR9As8TTc8okQn5n5C2XB+MUofwVwd8EZaCiFN6V+c7oGNTN/DXC5TdNn5vp8DdAcfMPHIP3zQStm/h7QAp9S9dmdX4t0wKhk0ffUsMF+pLUA0KclzFclrQJIn37CDvsMj8D64Pw+wMXqVzZ9cjBgA4uE9OGF5h5O4dds+mThHOI5wfpgymu6BLfk08f/jw/A+vkNYP28BoA+NoCbEF/n5fq4CeEY+t/eYP20MVwy8+JCOvwG6Sde675duCN07B0k6NOVN4AvRsBBtD69gxcjf9NEwAHSBzd8MKN7wg6wPrghwXOCHcj1if2U45tS7CBO/wecwj9vmrADoA9u+MAxhgIcROiT8UOO16q6CXAQod9wi+3g4dRhffxwmvQawUXp+1XgQ9jbrAY7kOtbblmELRbvYJq6BPqgAqAGNaWS8OqjqeF6GYULfvn0Gbdh3ne1lnEEiQEArvO/rMYR4EGQ8SB6/fgo/8gEsHwiADAIput3lNrm+8iEOIjfwBt5EVABtvKPTLrpSF9HfATzRRhSJ9ydKQCeBJ53NoGfSUqzBA5E+jq2cjzvRt9Gf+3keap+wlfYdbqDvddfE6U4GEZPY2GAfqADHZugxvphnVi/jd2Fh91jB5H7I63Bm9kEKxLXc+H+W3/6/LmgdFwt3p3oNINdeNI0RRac4YhNiPiMvAUbGj4+ffn+SM9wVlxQnxn2JFQfW2CjxqfEx8qr46lJteAxQ/VqPCm88mQxU9NRyX9Sfk6Rx5uWActjQRlZf77o4elYUXas2+iT4itl6aUoKvV5u33ydS+flpvP6ioy+J6enp6enp7fACVCXgM3N/X5AAAAAElFTkSuQmCC") 0 0 no-repeat
+				background-size 64px 64px
+				margin-bottom 0
+		h3
+			margin 0 48px 0 0
+			font-size 1.4rem
+			line-height 2rem
+			font-weight 400
+			color #5c5c5c
+	&-closer
+		display block
+		width 48px
+		height 48px
+		background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAFVBMVEVHcEyPj4+Ojo6QkJCOjo6Ojo6Pj4/iav2LAAAABnRSTlMAYF9f79/MkCbDAAAAvUlEQVR4Xu3VoXHEQBBFwZUiOGJF4BJWCiZOwFXHr876+YdgICKBXtcCsZnHPmk4ra6qquruPn+wqGe26zDntyt8530d1uxdYcmVmJNXV5hyJdbk0QYIACAAgAAAQoAJACYEmABgQoAJACYEmABgAoAJACYAkADA1uQ9AsxJso0BIAi8FhACHhMIAa2BENAaCAIgDIAgAMIACAIgDIAgAMIACAIgDAwQzwM4Ef/9uAM4E3tX+PjCUlVVVd14f1VaUV2/qDdvAAAAAElFTkSuQmCC") 0 0 no-repeat
+		background-size 48px 48px
+		overflow hidden
+		cursor pointer
+		text-indent -9999px
+		position absolute
+		top 16px
+		right 16px
+		cursor pointer
+	&-body
+		padding 16px 0
+		.reg-form__checkbox-holder
+			padding 28px 0
+		.captcha
+			img
+				display block
+				max-width 100%
+		.reg-result
+			font-size 2rem
+			line-height 2.8rem
+			font-weight 700
+			color #2B9927
+	&-footer
+		margin-top auto
+		padding 16px 0
+		.btn
+			display block
+			width 100%
 
 
 .phone-show

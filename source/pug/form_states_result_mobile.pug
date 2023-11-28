@@ -150,24 +150,12 @@ block popup
 		.modal-popup-inner
 			.modal-popup-header
 				.h-fixed
-					h2 Хотите попробовать бесплатно?
-					h3 Предложим решение специально для вас
+					h2.reg-result-icon
 					span.modal-popup-closer
 			.modal-popup-body
 				.h-fixed
 					form.reg(action="")
-						.input-wrap
-							input.text(type="text" placeholder="Телефон для связи")
-							input.reset(type="reset" value="")
-						.reg-form__checkbox-holder
-							.checkbox-custom-wrap
-								label
-									input.checkbox(type="checkbox")
-									span.checkbox-view
-									span.checkbox-copy Даю согласие на 
-										a(href="https://ya.ru/") обработку персональных данных
-						.captcha
-							img(src="../f/i/recaptcha.png" width="312" height="86")
+						.reg-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас 
 			.modal-popup-footer
 				.h-fixed
-					+btnBtn("Позвоните мне")
+					+btn("Закрыть").with-border

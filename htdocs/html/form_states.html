@@ -20,7 +20,7 @@
             </form><span class="topbar-closer">X</span>
           </div><a class="topbar-free-trial phone-show" href="">Попробовать бесплатно</a>
         </div>
-      </div><br>
+      </div><br class="phone-hide">
       <div class="h-topbar-wrap phone-hide">
         <div class="h-fixed">
           <div class="topbar-center phone-hide">
@@ -30,7 +30,7 @@
             </form><span class="topbar-closer">X</span>
           </div><a class="topbar-free-trial phone-show" href="">Попробовать бесплатно</a>
         </div>
-      </div><br>
+      </div><br class="phone-hide">
       <div class="h-topbar-wrap phone-hide">
         <div class="h-fixed">
           <div class="topbar-center phone-hide">
@@ -48,7 +48,7 @@
               </label>
               <ul class="topnav-list">
                 <li><a href="">Возможности</a></li>
-                <li><a href="">Продвижение</a></li>
+                <li><a href="">Маркетинг</a></li>
                 <li><a href="">Приложение</a></li>
                 <li><a href="">Цены</a></li>
                 <li class="topnav-login phone-show"><a class="btn with-border topnav-login" href="">Войти</a></li>
@@ -133,7 +133,7 @@
                 </div>
               </div>
             </li>
-            <li>
+            <li class="result">
               <div class="prices-list__card">
                 <div class="prices-list__card-form">
                   <div class="prices-list__card-form-result">Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас</div>
@@ -206,5 +206,29 @@
         </div>
       </div>
     </footer>
+    <div class="modal-popup-wrap phone-show">
+      <div class="modal-popup-inner">
+        <div class="modal-popup-header">
+          <div class="h-fixed">
+            <h2>Хотите попробовать бесплатно?</h2>
+            <h3>Предложим решение специально для вас</h3><span class="modal-popup-closer"></span>
+          </div>
+        </div>
+        <div class="modal-popup-body">
+          <div class="h-fixed">
+            <form class="reg" action="">
+              <div class="input-wrap"><input class="text" type="text" placeholder="Телефон для связи"><input class="reset" type="reset" value=""></div>
+              <div class="reg-form__checkbox-holder">
+                <div class="checkbox-custom-wrap"><label><input class="checkbox" type="checkbox"><span class="checkbox-view"></span><span class="checkbox-copy">Даю согласие на <a href="https://ya.ru/">обработку персональных данных</a></span></label></div>
+              </div>
+              <div class="captcha"><img src="../f/i/recaptcha.png" width="312" height="86"></div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-popup-footer">
+          <div class="h-fixed"><button class="btn" type="submit">Позвоните мне</button></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
