@@ -40,14 +40,18 @@ html.no-js
 							label.topnav-button-container.desktop-hide(for="topnav-toggle")
 								.topnav-button
 							ul.topnav-list
-								li
-									a(href="") Возможности
-								li
-									a(href="") Маркетинг
-								li
-									a(href="") Приложение
-								li
-									a(href="") Цены
+								block navLi1
+									li
+										a(href="") Возможности
+								block navLi2
+									li
+										a(href="") Маркетинг
+								block navLi3
+									li
+										a(href="") Приложение
+								block navLi4
+									li
+										a(href="") Цены
 								block loginPhone
 									li.topnav-login.phone-show
 										+btn("Войти").with-border.topnav-login
