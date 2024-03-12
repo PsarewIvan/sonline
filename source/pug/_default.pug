@@ -55,10 +55,13 @@ html.no-js
 										a(href="") Цены
 								block loginPhone
 									li.topnav-login.phone-show
-										+btn("Войти").with-border.topnav-login
+										+btn("Вход").with-border
+										+btn("Регистрация").with-border
 								li.topnav-phone.phone-show 8 (800) 302-32-09
 						block login
-							+btn("Войти").with-border.topnav-login.phone-hide
+							.topnav-login
+								+btn("Вход").with-border.phone-hide
+								+btn("Регистрация").with-border.phone-hide
 						span.topnav-phone.phone-hide 8 (800) 302-32-09
 		
 		section.h-content-wrap

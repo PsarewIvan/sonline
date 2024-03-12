@@ -254,20 +254,27 @@ input.text
 		overflow hidden
 		cursor pointer
 		text-indent -9999px
+		flex-shrink 0
 		@media $tablet
 			position relative
 			z-index 2
 .topnav
 	display flex
 	padding-left 24px
+	@media $onlysmalldesktop
+		padding-left 0
 	@media $phone
 		width 24px
 .topnav-list
 	display flex
 	padding-left 24px
+	@media $onlysmalldesktop
+		padding-left 10px
 	li
 		margin 0 0 0 32px
 		font-weight 700
+		@media $onlysmalldesktop
+			margin-left 15px
 		@media $tablet
 			margin 0
 		a
@@ -285,6 +292,8 @@ input.text
 	@media $tablet
 		position relative
 		z-index 2
+	.btn + .btn
+		margin-left 16px
 .topnav-phone
 	font-weight 700
 	margin-left 24px
