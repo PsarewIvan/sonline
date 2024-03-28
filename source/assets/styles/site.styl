@@ -187,7 +187,7 @@ input.text
 				line-height 2.8rem
 				font-weight 700
 		.input-wrap
-			margin 0 4px 0 0
+			margin 0 8px 0 0
 			width 100%
 		input.text
 			height 48px
@@ -467,6 +467,19 @@ input.text
 		@media $tablet
 			padding-top 0
 			padding-bottom 0
+	&.region-var
+		@media $phone
+			&:before
+				top 32px
+			.offer-copy h1
+				max-width 380px
+				margin-bottom 542px
+		@media $smallphone
+			&:before
+				top 64px
+			.offer-copy h1
+				max-width 270px
+				margin-bottom 574px
 .offer-copy
 	width 480px
 	position relative
@@ -537,10 +550,10 @@ input.text
 		@media $tablet
 			width auto
 			flex-grow 1
-			margin-right 4px
+			margin-right 8px
 		@media $phone
 			width 100%
-			margin 0 0 4px
+			margin 0 0 8px
 	.btn
 		margin-left auto
 		@media $phone
@@ -562,6 +575,8 @@ input.text
 		line-height 2.8rem
 		font-weight 700
 		color #2B9927
+	.captcha
+		margin 0 0 16px
 
 .b-advantages-wrap
 	padding 64px 0
@@ -620,6 +635,8 @@ input.text
 	@media $phone
 		font-size 2.4rem
 		line-height 3.2rem
+	.colored
+		color #E63946
 .section-h3
 	font-size 2.8rem
 	line-height 4rem
@@ -998,13 +1015,13 @@ input.text
 			font-size 1.6rem
 			line-height 2rem
 	input.text
-		margin 0 4px 0 0
+		margin 0 8px 0 0
 		@media $tablet
 			width auto
 			flex-grow 1
 		@media $phone
 			width 100%
-			margin 0 0 4px
+			margin 0 0 8px
 	.btn
 		white-space nowrap
 		@media $tablet
@@ -1022,6 +1039,8 @@ input.text
 		font-weight 700
 		color #2B9927
 		min-height 64px
+	.captcha
+		margin 0 8px 0 0
 
 .b-clients-wrap
 	@media $phone
@@ -1600,6 +1619,179 @@ input.text
 				order 2
 
 
+.differ-list
+	display flex
+	flex-wrap wrap
+	align-items stretch
+	gap 12px
+	margin 0 0 48px
+	@media $phone
+		margin 0 0 32px
+	&__numb
+		position absolute
+		top 0
+		left -29px
+		font-size 16rem
+		font-weight 700
+		line-height 16rem
+		color #fff
+	&__inner
+		padding 24px 24px 48px 48px
+		position relative
+		h4
+			font-size 2rem
+			line-height 2.8rem
+			font-weight 700
+			margin 0 0 12px
+		p
+			margin 0
+	li
+		box-sizing border-box
+		width calc(25% - 9px)
+		min-height 16rem
+		border-radius 12px
+		position relative
+		overflow hidden
+		@media $tablet
+			width calc(50% - 6px)
+		@media $phone
+			width 100%
+		&:nth-child(5)
+			width calc(50% - 6px)
+			@media $tablet
+				width 100%
+		&:nth-child(8)
+			@media $tablet
+				width calc(33.3% - 6px)
+			@media $phone
+				width 100%
+		&:nth-child(9)
+			width calc(37.5% - 7.5px)
+			@media $tablet
+				width calc(66.7% - 6px)
+			@media $phone
+				width 100%
+		&:nth-child(10)
+			width calc(37.5% - 7.5px)
+			@media $tablet
+				width 100%
+		&:nth-child(5n+1)
+			background #D6ECF7
+		&:nth-child(5n+2)
+			background #FFF5D6
+		&:nth-child(5n+3)
+			background #D6F0E0
+		&:nth-child(5n+4)
+			background #EBEAF6
+		&:nth-child(5n+5)
+			background #F9DEDE
+.differ-notes
+	&__cols-wrap
+		display flex
+		gap 0 32px
+		@media $tablet
+			display block
+	&__col
+		width calc(50% - 32px)
+		@media $tablet
+			width auto
+			margin 0 0 12px
+			&:last-child
+				margin 0
+		p
+			margin 0 0 10px
+			&:last-child
+				margin 0
+
+
+.functionality__cols
+	&-wrap
+		display flex
+		align-items flex-start
+		gap 0 32px
+		@media $phone
+			display block
+	&-col
+		border 2px solid #F4A4AB
+		border-radius 12px
+		box-shadow 0px 240px 120px 0px rgba(0, 0, 0, 0.00), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 8px 32px 0px rgba(0, 0, 0, 0.04)
+		&.w100
+			width 100%
+		&.w50
+			width 50%
+			@media $phone
+				width 100%
+				margin 0 0 12px
+				&:last-child
+					margin 0
+		&.phone-no-bord
+			@media $phone
+				border none
+				box-shadow none
+				border-radius 0
+				.functionality__cols-col-inner
+					padding 0
+	&-col-inner
+		padding 24px
+	&-list
+		padding 24px 0 8px
+		&.with-columns
+			columns 2
+			column-gap 48px
+			break-inside avoid
+			@media $tablet
+				column-gap 12px
+			@media $phone
+				columns 1
+				column-gap 0
+				padding 0
+		li
+			position relative
+			margin 0 0 16px
+			padding 0 0 0 28px
+			&:after
+				display block
+				content ""
+				width 16px
+				height 24px
+				background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAwCAYAAABwrHhvAAAAfElEQVR4Ae2WAQaAMBhGu0w1W4faTeoWvwTdtAqSX2XgK3qPAXzvMWYVAAAA/IpoIUer8yvybmr6NLbLfmQRXi4PuJaHATnyb8vdY6GXHwPboEzuA84R8jtPFmYfIZAXRAjkBREi+VOETH4XIZX7CL3cR+jl+i8VAACAnBVRQNesa3S9DQAAAABJRU5ErkJggg==") 0 0 no-repeat
+				background-size 16px 24px
+				position absolute
+				top 0
+				left 0
+		.smaller
+			display block
+			font-size 1.4rem
+			line-height 2rem
+			color #5C5C5C
+	&-btns
+		padding 48px 0 0
+		@media $phone
+			padding 16px 0 0
+	&-tarif-name
+		font-size 2rem
+		line-height 2.8rem
+		font-weight 700
+		margin 0 0 26px
+	&-tarif-price
+		margin 0 0 24px
+		strong
+			font-size 3.6rem
+			line-height 4.8rem
+			font-weight 700
+	&-tarif-descr
+		border-top 1px solid #E0E0E0
+		border-bottom 1px solid #E0E0E0
+		padding 12px 0
+		font-size 1.4rem
+		line-height 2rem
+		font-weight 600
+	&-tarif-btns
+		padding 12px 0 0
+		.btn
+			display block
+
+
 .h-footer
 	background #3D3D3D
 	font-size 1.2rem
@@ -1682,6 +1874,8 @@ input.text
 			background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAVFBMVEUAAAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/ICD/AAD/////n5//AAD/7+//gID/EBD/AADHW325AAAAHHRSTlMAIEBQYDCAn7/f7//Pr48Qfx9w/6D//7D///+Q2baMOgAAASRJREFUeAHt2NWBw0AMhGEtgxzmpP86DzaPgVlbx6evgPmDJvo/lFJKKaWUeWMb5xt7FYwxglUfU8qlVAZqGfJsHl2gERbLyqOVpaFOofAkJVAXU3mi2lcoPFmhDp4FPGGZBTJhlQUqQYFFVoRYFnGErFlkTUjk+zbcJRKy5ft2+65Emvwr3e26EgdJoCeRCRmeBXCiEFKeBFBCHsAJHGAQQAlhACeEAZz4sMDxdP7YAJqXB/B8I/iZgnnp/wDMywN4vhkkB7s2D2RCZnwfmEcBfMJp81gi5ML3nblL/P6TvmMRS4hhkfD9l47yi99vvnyX34BgofJE1Xz/TeCViRMSNS5ohODiZZaHnhvxklOK3ogeJQR75RtnG/OGlFJKKaXUv/EKXnN3jfb+CbEAAAAASUVORK5CYII=")
 		&.x
 			background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAP1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////9Du/pqAAAAFXRSTlMAUGAg/88Q34CQj3Cv779AMH+fb1/Z1R8CAAABh0lEQVR4Ae3Y0W6CUAzG8cIpIIAgm+//rDMlflhXko32yvR35XbRkAP/YqSUUkoppfTpqlopZCn1hk6oWWlaa37H4kJn9KwM9EvbYP4pDSsjvZtY9HQGDuA6P8iHQtrAYqbTFpl7I6KRHzp9G1Zm/PcszN1O44tefLPoCnlMzzNou7fbUAXMx9yViG5XflhIyJ84P5eCudtxFR1ATW41HiDpYvYHZvbWtM+sVndgdm/DflxGYD4FD1C1HZc/sMPeevnkD+y4t5mFHUBEb6WLn697W9gOLLg3O7CQ3rD2oqE3rL1w6A1rD6J7w9rTonubKVqFgLH2IsnRo7f427A3zOu+9mLnw7I/tZG7Qky48nl7amNgi/b7lZfQ3gYW0+uVL4G3Ad/hjN7awPlF9xa29u5qPq7cv/bs73B4vwWtPQRQWe83/9rD/NF6v/nXHgK72O83/9pDYPb7zb32EJj9foNrcQXQtEf3BhpnYIaFlcEZmGFk5U7/Vm9uf/utoaIPl1JKKaWUfgBSRBQPsSGgBAAAAABJRU5ErkJggg==")
+		&.telegram
+			background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAACkVBMVEVHcEwfn98qqu4pq+0oqu4oq+0pqu0qqu0qq+4pqu0qq+4pq+0mqOonqOgnp+sqq+0pqu0oquwqqu0pquwpq+0pquwpquwpqewpq+wpquwoqespqewpqesoqesqquwpqesoqeonqOopq+soqespqusoqOooqOooqeooqeopqeopqeooqOoop+kop+koqOkqqespqOooqOknp+knqOkmp+knp+gmpecop+gop+gnp+goqOgnp+clpecnp+cnpucop+c1rOmGzvK85PjJ6flQuOwmpuYnpuYnpueFzfH///8opeYnpuZdve2h2PXy+v7k9PwmpuY0q+hrwu4mpuQmpuWT0/O84/cgn+EmpeUnpuUmpeUnpeV3xu8npuUlpOImpeST0vKh2PRcvOsmpeVBsOhBsegmpOQmpeQko+I0qubJ6fjX7/olpOQlpOMmpOMmpOQmpOMnpeS74vZqwe1BsOfk9PtOteiEy+8lpOJqwewlo+JAr+ZOteglpOImpOIlo+Ilo+Gg1/IlpOF2xeyt3PUjouAlo+GS0fAlo98kouAkouEmot8louEgpOYkouAlouAlo+AlouAkouAkot8ko+Ain9tAruSt3PMkot8kod8kod4jod8lot8kod9buecjod4kod4kod52xerk8/syqOIkod4/reIjoN4/reIjod4kod8joN0kot4jod0xp+Aiod4joN0jod0joN0kod0jn9ojoNwintojoNwkoN0in9whntojoNsjn9wkoNwjn9sin9sjn9sintkioNoin9sjoNsin9ohn9oioNwjntsintojntofn9cintoin9ointogndgintojn9ointkintkintgfn88intkintojn9gintkhndlMs1lFAAAA23RSTlMAEF+Pr8/f///+34BPIED//59/3+7+//5vv/7//u///+9wj////r/+/7///59//o////7v3/5g/v////6A//7////////f/v///z////////7//5DP//8g/v/////+gP7///+v/v/+/8/////f/v7////////////+//7//v////7/r///j///YP7+UP8f3////v/+n0D////+34D////+7/7+//////7+33D+//7+X7////9w/pD///6An///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")
 .footer-stores
 	display flex
 	@media $phone
