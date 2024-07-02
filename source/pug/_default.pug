@@ -11,24 +11,25 @@ html.no-js
 		meta(content="index,follow", name="robots")
 		meta(content="yes", name="apple-mobile-web-app-capable")
 		title Sonline.su
-		link(href="../f/css/main.css", rel="stylesheet", type="text/css")
 		block styles
+			link(href="../f/css/main.css", rel="stylesheet", type="text/css")
 
 	body
 		header.h-header.header-sticky
-			.h-topbar-wrap
-				.h-fixed
-					.topbar-center.phone-hide
-						form.reg(action="")
-							label.topbar-title
-								strong Хотите попробовать бесплатно?
-								span.tablet-hide Предложим решение специально для вас
-							.input-wrap
-								input.text.dark(type="text" placeholder="Телефон для связи")
-								input.reset(type="reset" value="")
-							+btnBtn("Позвоните мне")
-						span.topbar-closer X
-					a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
+			block topbarDefault
+				.h-topbar-wrap
+					.h-fixed
+						.topbar-center.phone-hide
+							form.reg(action="")
+								label.topbar-title
+									strong Хотите попробовать бесплатно?
+									span.tablet-hide Предложим решение специально для вас
+								.input-wrap
+									input.text.dark(type="text" placeholder="Телефон для связи")
+									input.reset(type="reset" value="")
+								+btnBtn("Позвоните мне")
+							span.topbar-closer X
+						a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
 
 			block topbarStates
 
@@ -36,28 +37,29 @@ html.no-js
 				.h-fixed
 					.topnav-center
 						a.logo(href="/") Sonline
-						nav.topnav
-							input#topnav-toggle.desktop-hide(type="checkbox")
-							label.topnav-button-container.desktop-hide(for="topnav-toggle")
-								.topnav-button
-							ul.topnav-list
-								block navLi1
-									li
-										a(href="") Возможности
-								block navLi2
-									li
-										a(href="") Маркетинг
-								block navLi3
-									li
-										a(href="") Приложение
-								block navLi4
-									li
-										a(href="") Цены
-								block loginPhone
-									li.topnav-login.phone-show
-										+btn("Вход").with-border
-										+btn("Регистрация").with-border
-								li.topnav-phone.phone-show 8 (800) 302-32-09
+						block topNav
+							nav.topnav
+								input#topnav-toggle.desktop-hide(type="checkbox")
+								label.topnav-button-container.desktop-hide(for="topnav-toggle")
+									.topnav-button
+								ul.topnav-list
+									block navLi1
+										li
+											a(href="") Возможности
+									block navLi2
+										li
+											a(href="") Маркетинг
+									block navLi3
+										li
+											a(href="") Приложение
+									block navLi4
+										li
+											a(href="") Цены
+									block loginPhone
+										li.topnav-login.phone-show
+											+btn("Вход").with-border
+											+btn("Регистрация").with-border
+									li.topnav-phone.phone-show 8 (800) 302-32-09
 						block login
 							.topnav-login
 								+btn("Вход").with-border.phone-hide
@@ -136,3 +138,5 @@ html.no-js
 						p Если бы кто-то решил составить «Рейтинг программ для салона красоты» мы надеемся, что максимальный набор функционала и дополнительных сервисов позволили бы нам занять достойное место в списке «Лучшие программы для салона красоты».
 
 		block popup
+
+		block scripts

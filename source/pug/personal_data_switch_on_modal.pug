@@ -1,0 +1,210 @@
+extends _default
+
+block styles
+	link(href="../f/css/personal-data.css", rel="stylesheet", type="text/css")
+
+block topbarDefault
+
+block topNav
+	nav.topnav
+		input#topnav-toggle.desktop-hide(type="checkbox")
+		label.topnav-button-container.desktop-hide(for="topnav-toggle")
+			.topnav-button
+		ul.topnav-list
+			block loginPhone
+				li.topnav-login.phone-show
+					+btn("Вход").with-border
+					+btn("Регистрация").with-border
+			li.topnav-phone.phone-show 8 (800) 302-32-09
+
+block content
+
+	.b-section-wrap.b-pers-promo-wrap
+		.h-fixed
+			.b-pers-promo-inner
+				.b-pers-promo-title Помогаем собирать 
+					span.b-pers-promo-agree-transform согласия ваших клиентов
+					|  на хранение и обработку персональных данных
+				.b-pers-promo-copy Соответствует всем нормам и требованиям законодательства РФ
+				.b-btn-centered
+					+btn("Подключить сервис")
+
+	.b-section-wrap
+		.h-fixed
+			ul.pers-advantages-list
+				li
+					.pers-advantages-list__inner
+						strong.pers-advantages-list__title 7 500+
+						span.pers-advantages-list__copy Компаний используют наше ПО
+				li
+					.pers-advantages-list__inner
+						strong.pers-advantages-list__title #!~@
+						span.pers-advantages-list__copy Шифрование данных
+				li
+					.pers-advantages-list__inner
+						strong.pers-advantages-list__title Российское ПО
+						span.pers-advantages-list__copy
+							a(href="") Входит в реестр ПО РФ
+				li
+					.pers-advantages-list__inner
+						strong.pers-advantages-list__title ×2
+						span.pers-advantages-list__copy Двойной бэкап
+
+	.b-section-wrap
+		.h-fixed
+			.b-pers-advantages-descr
+				.b-pers-advantages-descr-col1 Наш сервис — простой, быстрый и безопасный способ получения согласий на обработку и хранение персональных данных клиентов
+				.b-pers-advantages-descr-col2
+					ul.b-pers-advantages-descr-list
+						li
+							b Соблюдение законов РФ
+							p Обеспечивает полное соответствие требованиям законодательства РФ по защите персональных данных
+						li
+							b Простота настройки
+							p Интуитивно понятный интерфейс и легкая настройка позволяют начать использовать сервис в считанные минуты
+						li
+							b Удобство для клиентов
+							p Обеспечивает удобный и прозрачный процесс получения согласия на обработку данных для ваших клиентов
+						li
+							b Уведомления по email
+							p Автоматическая отправка данных о полученных согласиях на электронную почту для дополнительной безопасности
+
+	.b-section-wrap.b-prices-wrap
+		.h-fixed
+			.section-title
+				h2.section-h2 Скидки до 26%
+				.section-tabs-wrap
+					ul.section-tabs-list
+						li
+							span.section-tabs-list-item 6 месяцев
+						li.active
+							span.section-tabs-list-item 12 месяцев
+			block tariffStates
+				ul.prices-list
+					li
+						.prices-list__card
+							h4 Хранение
+							.prices-list__card-period
+								strong 3 000 ₽
+								|  за 12 месяцев
+							.prices-list__card-list
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span Хранение данных
+							+btn("Купить")
+					li
+						.prices-list__card
+							h4 Хранение и отзыв
+							.prices-list__card-period
+								strong 7 800 ₽ 
+								|  за 12 месяцев
+							.prices-list__card-list
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span Хранение данных
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span Отзыв согласий
+							+btn("Купить")
+					li
+						.prices-list__card
+							h4 100 согласий
+							.prices-list__card-period
+								strong 8 900 ₽ 
+								|  за 12 месяцев
+							.prices-list__card-list
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span Хранение данных
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span Отзыв согласий
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span
+										b Получение 100 согласий
+							+btn("Купить")
+					li
+						.prices-list__card
+							h4 Всё включено
+							.prices-list__card-period
+								strong 20 800 ₽ 
+								|  за 12 месяцев
+							.prices-list__card-discount
+								span.prices-list__card-discount-badge −26%
+								del.prices-list__card-discount-del 28 200 ₽
+							.prices-list__card-list
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span Хранение данных
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span Отзыв согласий
+								.prices-list__card-list-item
+									i.ph.ph-check
+									span
+										b Неограниченное получение согласий
+							+btn("Купить")
+
+	.b-section-wrap.b-maitenance-wrap
+		.h-fixed
+			.section-title
+				h2.section-h2 Как это работает?
+			ul.maitenance-list
+				li.op1
+					span.maitenance-list__numb 1
+					.maitenance-list__inner
+						h4 Оплачиваете лицензию
+						p Выбираете подходящий тариф и оплачиваете лицензию. Наш менеджер поможет подобрать вам подходящий пакет услуг.
+				li.op2
+					span.maitenance-list__numb 2
+					.maitenance-list__inner
+						h4 Настраиваете сервис
+						p Заполняете данные о своей компании и, при необходимости, добавляете свой текст в стандартное соглашение.
+				li.op3
+					span.maitenance-list__numb 3
+					.maitenance-list__inner
+						h4 QR-код
+						p Получаете QR-код с ссылкой на соглашение. Клиенты сканируют код и подтверждают свое согласие с помощью SMS-кода.
+				li.op4
+					span.maitenance-list__numb 4
+					.maitenance-list__inner
+						h4 Хранение данных
+						p Вы получаете доступ к полученным согласиям клиентов. И, по запросу клиента, всегда можете отозвать его согласие на обработку и хранение персональных данных.
+			.b-btn-centered
+				+btn("Подключить сервис")
+
+block popup
+	.modal-popup-wrap.right
+		.modal-popup-inner
+			.modal-popup-header
+				.h-fixed
+					span.modal-popup-closer
+			.modal-popup-body
+				.h-fixed
+					form.reg(action="")
+						.form-title__wrap
+							h2 Подключить сервис
+							.form-copy Укажите ваш номер телефона и мы свяжемся с Вами в ближайшее время
+						fieldset.form-fieldset__wrap
+							.input-wrap
+								input.text(type="text" placeholder="Телефон для связи")
+								input.reset(type="reset" value="")
+						fieldset.form-fieldset__wrap
+							.input-wrap
+								input.text(type="text" placeholder="Название компании")
+								input.reset(type="reset" value="")
+						fieldset.form-fieldset__wrap
+							.checkbox-custom-wrap
+								label
+									input.checkbox(type="checkbox")
+									span.checkbox-view
+									span.checkbox-copy Даю согласие на 
+										a(href="") обработку персональных данных
+						.captcha
+							img(src="../f/i/recaptcha.png")
+						.form-fieldset-btn__wrap
+							+btnBtn("Позвоните мне")
+						.form-copy Уже подключили сервис? 
+							a(href="")
+								b Войдите в Личный кабинет
