@@ -355,8 +355,12 @@ input.text
 	@media $tablet
 		position relative
 		z-index 2
-	.btn + .btn
-		margin-left 16px
+	.btn
+		@media $tablet
+			padding-left 29px
+			padding-right 29px
+		& + .btn
+			margin-left 16px
 	@media $phone
 		display none
 .topnav-phone
