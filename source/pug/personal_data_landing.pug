@@ -1,0 +1,54 @@
+doctype html
+
+include _mixins.pug
+
+html.no-js
+	head
+		meta(content="text/html; charset=utf-8", http-equiv="Content-Type")
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1")
+		meta(content="", name="Description")
+		meta(content="", name="Keywords")
+		meta(content="index,follow", name="robots")
+		meta(content="yes", name="apple-mobile-web-app-capable")
+		title Sonline.su
+		link(href="../f/css/personal-data.css", rel="stylesheet", type="text/css")
+
+	body
+		.h-pd-landing-wrap
+			.h-pd-landing-col
+				.h-fixed
+					header.h-pd-landing-col__header
+						a.logo(href="/") Sonline
+					.b-pd-landing-promo-wrap
+						.b-pd-landing-promo-inner
+							.b-pd-landing-promo-title Помогаем собирать 
+								span.b-pd-landing-promo-agree-transform согласия ваших клиентов
+								|  на хранение и обработку персональных данных
+							.b-pd-landing-promo-copy Соответствует всем нормам и требованиям законодательства РФ
+					footer.h-pd-landing-col__footer.desktop-show
+						.pd-landing__copyright © ООО «Сонлайн», 2024
+			.h-pd-landing-col.colored
+				.h-fixed
+					header.h-pd-landing-col__header.desktop-show
+					.b-pd-landing-service-wrap
+						h2 Сервис «Картотека»
+						.b-pd-landing-service-discount
+							.b-pd-landing-service-discount-title −15% по приглашению
+							.b-pd-landing-service-discount-descr
+								span.b-pd-landing-service-discount-descr-del 20 800
+								|  17 680 ₽ за 12 месяцев
+						.b-pd-landing-service-copy Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						ul.b-pd-landing-service-list
+							li
+								b Соблюдение законов РФ
+								| Обеспечивает полное соответствие требованиям законодательства РФ по защите персональных данных
+							li
+								b Удобство для клиентов
+								| Обеспечивает удобный и прозрачный процесс получения согласия на обработку данных для ваших клиентов
+						.b-pd-landing-service-copy Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						.b-pd-landing-service-btns
+							+btn("Подключить «Картотеку»")
+					footer.h-pd-landing-col__footer
+						.pd-landing__copyright.desktop-hide © ООО «Сонлайн», 2024
+						.pd-landing__detailed Подоробнее о сервисе на 
+							a(href="") kartoteka.sonline.ru
