@@ -1,7 +1,8 @@
 extends _default
 
-block content 
 
+block content
+	- var currentPage = 'home';
 	.b-offer-wrap
 		.h-fixed
 			.offer-copy
@@ -22,7 +23,7 @@ block content
 						input.text(type="text" placeholder="Телефон для связи")
 						input.reset(type="reset" value="")
 					+btnBtn("Позвоните мне")
-		
+
 	.b-advantages-wrap
 		.h-fixed
 			ul.advantages-list
@@ -42,7 +43,7 @@ block content
 					.advantages-list__inner
 						strong.advantages-list__title 12 лет
 						span.advantages-list__copy автоматизируем ведение бизнеса
-		
+
 	.b-section-wrap.b-basic-functionality-wrap
 		.h-fixed
 			.section-title
@@ -96,7 +97,7 @@ block content
 							.functionality-col__list-img.badge
 							span Персонал
 			.sonline-box.phone-hide
-		
+
 	.b-section-wrap.b-actions-wrap
 		.h-fixed
 			.section-title
@@ -135,7 +136,7 @@ block content
 							img(src="../f/i/act5-img.png" alt="")
 			ul.section-footnotes
 				li * Проекты Meta Platforms Inc., деятельность которой в России запрещена
-		
+
 	.b-section-wrap.b-maitenance-wrap
 		.h-fixed
 			.section-title
@@ -161,7 +162,7 @@ block content
 					.maitenance-list__inner
 						h4 Видео и текстовые инструкции
 						p В каждом разделе вы найдете видио и текстовые инструкции с подробным описанием всех процессов работы в программе
-		
+
 	.b-integration-wrap
 		.h-fixed
 			.section-title
@@ -172,7 +173,7 @@ block content
 					span.tablet-hide Предложим решение специально для вас
 				input.text(type="text" placeholder="Телефон для связи")
 				+btnBtn("Позвоните мне")
-		
+
 	.b-section-wrap.b-clients-wrap
 		.h-fixed
 			.section-title
@@ -234,7 +235,7 @@ block content
 						.rating__card-descr
 							span 4 оценки
 						.rating__card-company.zoon
-	
+
 	.b-section-wrap.b-prices-wrap
 		.h-fixed
 			.section-title
@@ -260,7 +261,7 @@ block content
 							.prices-list__card-dop до 5 специалистов**
 							.prices-list__card-hr
 							.prices-list__card-period
-								strong 8 400 ₽ 
+								strong 8 400 ₽
 								|  за 12 месяцев
 							.prices-list__card-discount
 								strong 3 месяца в подарок
@@ -272,18 +273,18 @@ block content
 							.prices-list__card-dop ∞ количество специалистов**
 							.prices-list__card-hr
 							.prices-list__card-period
-								strong 18 000 ₽ 
+								strong 18 000 ₽
 								|  за 12 месяцев
 							.prices-list__card-discount
 								strong 3 месяца в подарок
 								|  при первом подключении
 							+btn("Купить")
 			ul.section-footnotes
-				li * Компания SONLINE входит в Реестр отечественного ПО, это позволяет нашим клиентам 
+				li * Компания SONLINE входит в Реестр отечественного ПО, это позволяет нашим клиентам
 					strong вернуть 150% стоимость программы
-					| . Подробнее о том, как оформить налоговый вычет, читайте 
+					| . Подробнее о том, как оформить налоговый вычет, читайте
 					a(href="") здесь
-					|  и 
+					|  и
 					a(href="") здесь
 					| .
 				li ** При расчете тарифа мы учитываем только Специалистов. Остальные сотрудники – администраторы, руководитель и т.д. не учитываются в стоимости программы.
@@ -309,16 +310,16 @@ block content
 					.other-funcs__card
 						.other-funcs__card-inner
 							h4 Вернуть 150% стоимости програмы
-							p Компания SONLINE входит в Реестр отечественного ПО, это позволяет нашим клиентам вернуть 150% стоимость программы. 
+							p Компания SONLINE входит в Реестр отечественного ПО, это позволяет нашим клиентам вернуть 150% стоимость программы.
 							a(href="") Подробнее о том, как оформить налоговый вычет
 							|.
 					.other-funcs__card
 						.other-funcs__card-inner
-							h4 Купить программу 
+							h4 Купить программу
 								br
 								| в беспроцентную рассрочку
 							a(href="") Подробнее об условиях
-	
+
 	.b-competition-wrap
 		.h-fixed
 			.competition-card
@@ -333,6 +334,6 @@ block content
 				h2.section-h2 Звоните! Ответим на все ваши вопросы
 			.callback__item
 				.callback__item-phone 8 (800) 302-32-09
-				.callback__item-copy или укажите удобную для вас 
+				.callback__item-copy или укажите удобную для вас
 					a(href="") форму общения
 					| , и мы с вами свяжемся

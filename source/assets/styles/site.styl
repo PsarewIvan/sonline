@@ -16,6 +16,10 @@ a
 	color #016AA2
 	text-decoration none
 
+.hidden
+	display none
+	visibility hidden
+
 .btn
 	display inline-block
 	box-sizing border-box
@@ -27,6 +31,8 @@ a
 	padding 16px 31px
 	color #fff
 	text-align center
+	cursor pointer
+	transition all 0.2s
 	&:disabled
 		opacity 0.48
 		cursor default
@@ -68,6 +74,7 @@ button.btn
 		top 50%
 		right 16px
 		transform translateY(-50%)
+		cursor pointer
 	input.text
 		&:focus + input.reset
 			background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAkElEQVR42u2USwrAIAxEPWpuoheQObKlSC225tsunXXeI+iQlHb+TaVKH2YqoaEhSzjyOcMo0AWCouNo4HZAkRQDL9KKrMKE8wozvla48LfCjc+KED4pYvhDUULFHssr7dTxiOJ+OrmdKq4X3NR5l2L972YFXxuTQm6dqqik1eZSyBepGNrJXiSCelQtMzvOHJuWALADA3RDAAAAAElFTkSuQmCC") 0 0 no-repeat
@@ -85,6 +92,9 @@ input.text
 	border-radius 12px
 	font 1.6rem/2.4rem $sfProDisplay
 	color #1F1F1F
+	transition all 0.2s
+	&:hover
+		border-color #0190DB
 	&:focus
 		border-color #0190DB
 	&.dark
@@ -94,6 +104,10 @@ input.text
 			border-color #0190DB
 			background #fff
 			color #1f1f1f
+	&.error
+		border-color #FF3B38
+	&:focus.error
+		border-color #FF3B38
 
 .checkbox-custom-wrap
 	position relative
@@ -148,12 +162,14 @@ input.text
 .h-header
 	&.header-sticky
 		background #fff
-		box-shadow 0px 8px 32px 0px rgba(0, 0, 0, 0.04), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 240px 120px 0px rgba(0, 0, 0, 0.00)
+		// box-shadow 0px 8px 32px 0px rgba(0, 0, 0, 0.04), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 240px 120px 0px rgba(0, 0, 0, 0.00)
 		position sticky
 		top 0
 		z-index 100
 
 .h-topbar-wrap
+	position relative
+	z-index 999
 	background rgba(0,0,0,.76)
 	color #fff
 	@media $phone
@@ -214,6 +230,7 @@ input.text
 		overflow hidden
 		cursor pointer
 		text-indent -9999px
+		border none
 	.topbar-result
 		display flex
 		align-items center
@@ -239,13 +256,20 @@ input.text
 .h-topnav-wrap
 	padding 24px 0
 	@media $phone
-		padding 36px 0
+		display flex
+		padding 24px 0
+
+.topnav-wrapper
+	@media $phone
+		width 100%
+		display flex
 
 .topnav-center
 	display flex
 	align-items center
 	@media $phone
-		justify-content space-between
+		width calc(100vw - 32px)
+
 	.logo
 		width 126px
 		height 24px
@@ -260,11 +284,10 @@ input.text
 			z-index 2
 .topnav
 	display flex
-	padding-left 24px
-	@media $onlysmalldesktop
-		padding-left 0
+	padding-left 48px
 	@media $phone
-		width 24px
+		margin-left auto
+
 .topnav-list
 	display flex
 	padding-left 24px
@@ -287,11 +310,21 @@ input.text
 		&.active
 			a
 				color #0190DB
+
+	.topnav-phone.phone-show
+		@media $phone
+			font-size: 28px;
+			font-weight: 700
+			line-height: 40px
+
 .topnav-login
 	margin-left auto
+	display flex
 	@media $tablet
 		position relative
 		z-index 2
+	@media $phone
+		display none
 	.btn + .btn
 		margin-left 16px
 .topnav-phone
@@ -325,24 +358,49 @@ input.text
 	&:after
 		content ""
 		margin-top: 8px
-#topnav-toggle
+
+.topnav-burger
+	z-index 100
 	display none
+
+	.icon-cross
+		display none
+
+	@media $tablet
+		display flex
+		flex-shrink 0
+		align-items center
+		justify-content center
+		border none
+		background-color transparent
+		padding 0
+		width 48px
+		height 48px
+		cursor pointer
+
+		img
+			width 32px
+			height 32px
+			object-fit contain
+
 	& ~ .topnav-list
 		@media $tablet
 			box-sizing border-box
 			position fixed
-			top 192px
+			top 0
 			left 0
+			right 0
+			bottom 0
 			z-index 1
-			padding 0
+			padding 216px 0 24px
 			width 100%
 			display none
 			flex-direction column
-			justify-content space-around
 			background #fff
 			overflow auto
 		@media $phone
 			top 144px
+			padding 0
 		li
 			@media $tablet
 				margin 0
@@ -350,12 +408,20 @@ input.text
 				border 0
 				opacity 0
 				transition opacity 400ms cubic-bezier(0.23, 1, 0.32, 1)
-				font-size 2.8rem
-				line-height 4rem
 			@media $phone
 				padding-left 16px
 				padding-right 16px
-	&:checked
+
+		a
+			@media $tablet
+				font-size 28px
+				line-height 40px
+	&.open
+		.icon-burger
+			display none
+		.icon-cross
+			display block
+
 		& + .topnav-button-container
 				.topnav-button
 					background rgba(255, 255, 255, 0)
@@ -368,20 +434,26 @@ input.text
 		& ~ .topnav-list
 			@media $tablet
 				display flex
-				height calc(100% - 192px)
-				padding 0
+				gap 16px
+
 			@media $phone
 				height calc(100% - 144px)
 			li
 				@media $tablet
 					opacity 1
 					box-sizing border-box
-					padding-top 4px
-					padding-bottom 4px
+					padding-top 16px
+					padding-bottom 16px
 					transition opacity 400ms cubic-bezier(0.23, 1, 0.32, 1)
 				&.topnav-login
 					@media $phone
+						display flex
 						padding-top 8px
+
+					.btn
+						@media $phone
+							font-size 16px
+							line-height 24px
 .topnav-button-container
 	cursor pointer
 	display flex
@@ -656,17 +728,226 @@ input.text
 		line-height 2.8rem
 		margin 8px 0 0
 .section-footnotes
-	padding 24px 0 0
-	max-width 66%
+	display flex
+	gap 32px
+	width 100%
+	padding 48px 0 0
 	@media $tablet
 		max-width 100%
 	@media $phone
-		padding-top 20px
+		flex-direction column
+		gap 12px
+		padding-top 32px
 	li
-		font-size 1.2rem
-		line-height 1.6rem
+		width 50%
+		font-size 16px
+		line-height 24px
+		color #1F1F1F
+		margin 0
+		@media $phone
+			width auto
+
+.additional-module-list
+	list-style none
+	padding 0
+	margin 0
+	display flex
+	flex-wrap wrap
+	gap 12px
+	@media $phone
+		flex-wrap nowrap
+
+	.additional-module-element
+		flex: 0 0 calc(33.3% - 8px)
+		width calc(33.3% - 8px)
+		box-sizing border-box
+		display flex
+		flex-direction column
+		gap 8px
+		min-height 224px
+		padding 24px
+		background-color #fff
+		box-shadow 0px 240px 120px 0px rgba(0, 0, 0, 0.00), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 8px 32px 0px rgba(0, 0, 0, 0.04);
+		@media $tablet
+			flex: 0 0 calc(50% - 6px)
+			width calc(50% - 6px)
+		@media $phone
+			flex 0 0 296px
+			width 296px
+
+	.additional-module-title-block
+		display flex
+		align-items center
+		gap 12px
+
+	.additional-module-icon
+		width 40px
+		height 40px
+
+		img
+			width 40px
+			height 40px
+			object-fit contain
+
+	.additional-module-title
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+		font-size: 20px
+		font-weight: 700
+		line-height: 28px
+
+	.additional-module-controls
+		display flex
+		justify-content space-between
+		gap 8px
+		padding-top 16px
+		margin-top auto
+
+	.additional-module-prices
+		display flex
+		flex-direction column
+
+	.additional-module-price
+		font-size: 20px
+		line-height: 28px
+
+	.additional-module-time
+		font-size: 14px
+		line-height: 20px
 		color #5C5C5C
-		margin 12px 0 0
+
+.slider__controls
+	display none
+	@media $phone
+		display block
+
+	.slider__pagination
+		display flex
+		align-items: center
+		justify-content center
+		height 40px
+		margin-top 32px
+
+	.slider__pagination-item
+		position relative
+		width 21px
+		height 40px
+		display flex
+		align-items center
+		justify-content center
+		background-color transparent
+		border none
+		padding 0
+		margin 0
+		cursor pointer
+		&::after
+			position absolute
+			content ''
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+			width 8px
+			height 8px
+			background-color rgba(194, 194, 194, 1)
+			border-radius 50%
+		&.itc-slider-indicator-active
+			&::after
+				background-color rgba(230, 57, 70, 1)
+
+.card-file-block
+	display flex
+	gap 48px
+	@media $tablet
+		flex-direction column
+		gap 24px
+	@media $phone
+		gap 32px
+
+	.card-file-main-text
+		flex-shrink 0
+		width 480px
+		font-size: 28px
+		font-weight: 300
+		line-height: 40px
+		@media $tablet
+			width auto
+
+	.card-file-list
+		padding 0
+		margin 0
+		list-style none
+		display grid
+		gap 48px
+		grid-template-columns: 1fr 1fr
+		@media $tablet
+			row-gap 24px
+		@media $phone
+			grid-template-columns: 1fr
+			gap 16px
+
+	.card-file-element
+		display flex
+		gap 12px
+		align-items flex-start
+
+		img
+			width 32px
+			height 32px
+			object-fit contain
+			flex-shrink 0
+
+	.card-file-element-title
+		margin-bottom 4px
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+		font-size: 20px
+		font-weight: 700
+		line-height: 28px
+
+.differ-programs
+	display grid
+	grid-template-columns: 1fr 1fr
+	gap 12px
+	margin-bottom 48px
+	@media $tablet
+		grid-template-columns 1fr
+
+	.differ-programs-block
+		display flex
+		flex-direction column
+		gap 12px
+		@media $tablet
+			flex-direction row
+		@media $phone
+			flex-direction column
+
+	.differ-programs-content
+		display flex
+		flex-direction column
+		align-items center
+		justify-content center
+		gap 24px
+		padding 24px
+		border-radius 12px
+		background #fff
+		box-shadow 0px 240px 120px 0px rgba(0, 0, 0, 0.00), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 8px 32px 0px rgba(0, 0, 0, 0.04);
+
+	.differ-programs-title
+		font-size: 28px
+		font-weight: 700
+		line-height: 40px
+		text-align center
+
+	.differ-programs-text
+		padding 0 32px 12px
+		font-size: 14px
+		font-weight: 400
+		line-height: 20px
+		text-align center
+		@media $tablet
+			padding 0 16px 12px
 
 .functionality-cols
 	&-wrap-overfow
@@ -1258,59 +1539,170 @@ input.text
 		@media $phone
 			height 284px
 
-.prices-list
+.prices-tabs-wrapper
+	width 100%
+	height 48px
 	display flex
-	justify-content space-between
+	justify-content center
+	margin-bottom 24px
+
+.prices-tabs
+	display flex
+	padding 4px
+	border-radius 12px
+	background-color rgba(0, 0, 0, 0.08)
+
+	&__tab
+		display flex
+		align-items center
+		padding 8px 24px
+		border none
+		border-radius 8px
+		background-color transparent
+		cursor pointer
+		font-size: 16px
+		font-weight: 700
+		line-height: 24px
+
+		&.active
+			background-color #fff
+
+		&:hover:not(.active)
+			background-color rgba(0, 0, 0, 0.04)
+
+.prices-list
+	// display flex
+	// flex-wrap: wrap
+	// justify-content space-between
+	display grid
+	// grid-template-columns: repeat(3, 1fr)
+	// grid-template-rows: auto
+	gap: 12px
+	grid-template-areas "item1 item1 item2 item2 item3 item3" "item4 item4 item4 item5 item5 item5"
 	@media $phone
 		display block
-	li
-		box-sizing border-box
-		width calc(33.333% - 6px)
-		box-shadow 0px 8px 32px 0px rgba(0, 0, 0, 0.04), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 240px 120px 0px rgba(0, 0, 0, 0.00)
-		border 2px solid #E63946
-		border-radius 12px
-		@media $phone
-			width 100%
-			margin 0 0 12px
-		&.result
-			border-color #2B9927
+
 	&__card
+		position relative
 		box-sizing border-box
-		padding 24px
+		// width calc(33.333% - 6px)
 		height 100%
 		display flex
 		flex-direction column
+		padding 24px
+		border 2px solid #E63946
+		border-radius 12px
+		box-shadow 0px 240px 120px 0px rgba(0, 0, 0, 0.00), 0px 96px 120px 0px rgba(0, 0, 0, 0.01), 0px 32px 96px 0px rgba(0, 0, 0, 0.02), 0px 16px 64px 0px rgba(0, 0, 0, 0.03), 0px 8px 32px 0px rgba(0, 0, 0, 0.04)
+		@media $tablet
+			padding-right 18px
+		@media $phone
+			width 100%
+			margin 0 0 12px
+		&:nth-child(1)
+			grid-area: item1
+		&:nth-child(2)
+			grid-area: item2
+		&:nth-child(3)
+			grid-area: item3
+		&:nth-child(4)
+			grid-area: item4
+        &:nth-child(5)
+			grid-area: item5
+		&.result
+			border-color #2B9927
+		&.prices-list__card_wide
+			// width calc(50% - 6px)
+			.prices-list__card-discount
+				margin-bottom 36px
+		&.prices-list__card_violet
+			border-color: #857AC5
+			.btn
+				background-color: #857AC5
+		&.prices-list__card_green
+			border-color: #00A43B
+			.btn
+				background-color: #00A43B
+
+		.prices-list__card-hit
+			position absolute
+			top 24px
+			right 24px
+			display flex
+			align-items center
+			gap 4px
+			color: #FF3B38
+			font-size: 16px
+			font-weight: 700
+			line-height: 24px
+
+			img
+				width 32px
+				height 32px
+				object-fit contain
+
 		h4
 			font-size 2rem
 			line-height 2.8rem
 			font-weight 700
 			margin 0 0 4px
-	&__card-hr
-		height 1px
-		background #E0E0E0
-		margin 12px 0 24px
-	&__card-period
-		strong
-			font-size 3.6rem
-			line-height 4.8rem
-			font-weight 700
-			@media $tablet
+
+		.prices-list__card-hr
+			height 1px
+			background #E0E0E0
+			margin 12px 0 24px
+
+		.prices-list__card-period
+			strong
+				font-size 3.6rem
+				line-height 4.8rem
+				font-weight 700
+
+				@media $tablet
+					display block
+
+				@media $phone
+					display inline
+
+		.prices-list__card-discount
+			font-size 1.4rem
+			line-height 2rem
+			color #857AC5
+			margin-bottom 60px
+
+			strong
 				display block
-			@media $phone
-				display inline
-	&__card-discount
-		font-size 1.4rem
-		line-height 2rem
-		color #857AC5
-		margin-bottom 60px
-		strong
+				font-size 2rem
+				line-height 2.8rem
+				font-weight 700
+
+		.prices-list__card-description
+			display flex
+			flex-direction column
+			gap 4px
+			min-height 72px
+			margin-bottom 36px
+			font-size 14px
+			line-height 20px
+
+		.prices-list__card-description-text
+			margin-bottom 4px
+
+		.prices-list__card-description-item
+			display flex
+			align-items center
+			gap 12px
+
+		.prices-list__card-description-dash
+			width 12px
+			height 2px
+			margin 2px
+			border-radius 50%
+			background-color #FF3B38
+
+		.btn
 			display block
-			font-size 2rem
-			line-height 2.8rem
-			font-weight 700
-	.btn
-		display block
-		margin-top auto
+			margin-top auto
+
 	&__card-form
 		.captcha
 			margin 0 0 16px
@@ -1320,6 +1712,7 @@ input.text
 			width 100%
 			display block
 			margin-top auto
+
 	&__card-form-result
 		display flex
 		align-items center
@@ -1625,8 +2018,11 @@ input.text
 	align-items stretch
 	gap 12px
 	margin 0 0 48px
+	@media $tablet
+		margin-bottom 0
 	@media $phone
-		margin 0 0 32px
+		flex-wrap nowrap
+		margin 0
 	&__numb
 		position absolute
 		top 0
@@ -1636,13 +2032,13 @@ input.text
 		line-height 16rem
 		color #fff
 	&__inner
-		padding 24px 24px 48px 48px
+		padding 24px 14px 48px 36px
 		position relative
 		h4
 			font-size 2rem
 			line-height 2.8rem
 			font-weight 700
-			margin 0 0 12px
+			margin 0
 		p
 			margin 0
 	li
@@ -1655,26 +2051,60 @@ input.text
 		@media $tablet
 			width calc(50% - 6px)
 		@media $phone
-			width 100%
+			flex-shrink 0
+			width 296px
+		&:nth-child(1)
+			@media $tablet
+				width calc(45.3% - 6px)
+			@media $phone
+				width 296px
+		&:nth-child(2)
+			@media $tablet
+				width calc(54.7% - 6px)
+			@media $phone
+				width 296px
+		&:nth-child(3)
+			@media $tablet
+				width calc(54.7% - 6px)
+			@media $phone
+				width 296px
+		&:nth-child(4)
+			@media $tablet
+				width calc(45.3% - 6px)
+			@media $phone
+				width 296px
+		&:nth-child(6),
+		&:nth-child(7)
+			width calc(33.1% - 6px)
+			@media $tablet
+				width calc(50% - 6px)
+			@media $phone
+				width 296px
 		&:nth-child(5)
-			width calc(50% - 6px)
+			width calc(33.1% - 6px)
 			@media $tablet
 				width 100%
+				min-height 128px
+			@media $phone
+				width 296px
 		&:nth-child(8)
 			@media $tablet
-				width calc(33.3% - 6px)
+				width calc(34.2% - 6px)
 			@media $phone
-				width 100%
+				width 296px
 		&:nth-child(9)
 			width calc(37.5% - 7.5px)
 			@media $tablet
-				width calc(66.7% - 6px)
+				width calc(65.8% - 6px)
 			@media $phone
-				width 100%
+				width 296px
 		&:nth-child(10)
 			width calc(37.5% - 7.5px)
 			@media $tablet
 				width 100%
+				min-height 100px
+			@media $phone
+				width 296px
 		&:nth-child(5n+1)
 			background #D6ECF7
 		&:nth-child(5n+2)
@@ -1687,12 +2117,12 @@ input.text
 			background #F9DEDE
 .differ-notes
 	&__cols-wrap
-		display flex
+		display grid
+		grid-template-columns 1fr 1fr
 		gap 0 32px
 		@media $tablet
 			display block
 	&__col
-		width calc(50% - 32px)
 		@media $tablet
 			width auto
 			margin 0 0 12px

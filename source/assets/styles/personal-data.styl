@@ -22,6 +22,87 @@ a
 	color #016AA2
 	text-decoration none
 
+.oferta-container
+	max-width 1376px
+	margin-left auto
+	margin-right auto
+	padding 64px 32px
+	@media $tablet
+		padding-top 16px
+	@media $phone
+		padding-left 16px
+		padding-right 16px
+
+	h2
+		font-size 36px
+		line-height 48px
+		font-weight 700
+		margin 0 0 16px
+
+	h3
+		margin 0 0 16px
+		font-size 20px
+		font-weight 700
+		line-height 28px
+
+	p
+		margin 0 0 16px
+
+	ul
+		margin 0 0 16px
+		display flex
+		flex-direction column
+		gap 4px
+
+	a
+		color: #016AA2
+
+	.oferta-table-title
+		margin-top 64px
+
+	.oferta-table
+		overflow-x: auto
+		margin-top 32px
+		margin-bottom 32px
+
+		table
+			min-width 960px
+
+			tr
+				border-top 1px solid #D6D6D6
+
+			tr:first-child
+				td
+					padding 20px 8px
+					font-weight 600
+
+			tr:last-child
+				border-bottom 1px solid #D6D6D6
+
+			td
+				padding 16px 8px
+
+			td.rowgr
+					padding 12px 8px
+					background-color rgba(0, 0, 0, 0.04)
+
+			td:first-child
+				padding-left 0 !important
+
+			td:last-child
+				padding-right 0 !important
+
+			td:nth-child(5)
+				text-align center
+
+			td:nth-child(6)
+				text-align center
+
+.oferta
+	max-width 720px
+	margin-left auto
+	margin-right auto
+
 .btn
 	display inline-block
 	box-sizing border-box

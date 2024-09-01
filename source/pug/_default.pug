@@ -12,12 +12,14 @@ html.no-js
 		meta(content="yes", name="apple-mobile-web-app-capable")
 		title Sonline.su
 		block styles
+			link(rel="stylesheet", href="../f/libs/itc.css", type="text/css")
 			link(href="../f/css/main.css", rel="stylesheet", type="text/css")
 
+	block variables
 	body
 		header.h-header.header-sticky
 			block topbarDefault
-				.h-topbar-wrap
+				.h-topbar-wrap.js-topbar
 					.h-fixed
 						.topbar-center.phone-hide
 							form.reg(action="")
@@ -28,32 +30,34 @@ html.no-js
 									input.text.dark(type="text" placeholder="Телефон для связи")
 									input.reset(type="reset" value="")
 								+btnBtn("Позвоните мне")
-							span.topbar-closer X
+							button.topbar-closer.js-topbar-close(type='button')
 						a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
 
 			block topbarStates
 
 			.h-topnav-wrap
-				.h-fixed
+				.h-fixed.topnav-wrapper
 					.topnav-center
 						a.logo(href="/") Sonline
 						block topNav
 							nav.topnav
-								input#topnav-toggle.desktop-hide(type="checkbox")
-								label.topnav-button-container.desktop-hide(for="topnav-toggle")
-									.topnav-button
-								ul.topnav-list
+								button.topnav-burger.js-topnav-button(type='button')
+									img.icon-burger(src='f/i/list.svg')
+									img.icon-cross(src='f/i/cross.svg')
+								//- input#topnav-toggle.desktop-hide(type="checkbox")
+								//- label.topnav-button-container.desktop-hide(for="topnav-toggle").topnav-button
+								ul.topnav-list.js-topnav
 									block navLi1
-										li
+										li(class=(currentPage === 'home' ? 'active' : ''))
 											a(href="") Возможности
 									block navLi2
-										li
+										li(class=(currentPage === 'marketing' ? 'active' : ''))
 											a(href="") Маркетинг
 									block navLi3
-										li
+										li(class=(currentPage === 'app' ? 'active' : ''))
 											a(href="") Приложение
 									block navLi4
-										li
+										li(class=(currentPage === 'prices' ? 'active' : ''))
 											a(href="") Цены
 									block loginPhone
 										li.topnav-login.phone-show
@@ -65,7 +69,7 @@ html.no-js
 								+btn("Вход").with-border.phone-hide
 								+btn("Регистрация").with-border.phone-hide
 						span.topnav-phone.phone-hide 8 (800) 302-32-09
-		
+
 		section.h-content-wrap
 			block content
 
@@ -118,7 +122,7 @@ html.no-js
 							li
 								a(href="") Условия возврата
 							li
-								a(href="") Процесс оплаты 
+								a(href="") Процесс оплаты
 									br.tablet-show
 									|  с помощью банковской карты
 							li
@@ -140,3 +144,5 @@ html.no-js
 		block popup
 
 		block scripts
+			script(src='../f/libs/itc.js')
+			script(src="../f/js/main.js")
