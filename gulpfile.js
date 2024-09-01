@@ -20,7 +20,7 @@ const browserSync = require('browser-sync').create();
 function libs() {
     return gulp
         .src(['source/assets/libs/**/*'])
-        .pipe(gulp.dest('htdocs/f/libs/'))
+        .pipe(gulp.dest('docs/f/libs/'))
         .pipe(browserSync.stream());
 }
 
@@ -29,7 +29,7 @@ function scripts() {
         .src(['source/assets/js/**/*.js'])
         .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('htdocs/f/js/'))
+        .pipe(gulp.dest('docs/f/js/'))
         .pipe(browserSync.stream());
 }
 
@@ -39,7 +39,7 @@ function styles() {
         .pipe(stylus())
         .pipe(cleanCSS())
         .on('error', console.log)
-        .pipe(gulp.dest('htdocs/f/css/'))
+        .pipe(gulp.dest('docs/f/css/'))
         .pipe(browserSync.stream());
 }
 
@@ -49,7 +49,7 @@ function compilePug() {
         .pipe(pug())
         .pipe(prettify())
         .on('error', console.log)
-        .pipe(gulp.dest('htdocs/'))
+        .pipe(gulp.dest('docs/'))
         .pipe(browserSync.stream());
 }
 
@@ -57,20 +57,20 @@ function images() {
     return gulp
         .src('source/assets/images/**')
         .on('error', console.log)
-        .pipe(gulp.dest('htdocs/f/i/'));
+        .pipe(gulp.dest('docs/f/i/'));
 }
 
 function fonts() {
     return gulp
         .src('source/assets/fonts/**/*')
         .on('error', console.log)
-        .pipe(gulp.dest('htdocs/f/fonts'));
+        .pipe(gulp.dest('docs/f/fonts'));
 }
 
 function browserSyncServe(cb) {
     browserSync.init({
         server: {
-            baseDir: './htdocs',
+            baseDir: './docs',
         },
     });
     cb();
