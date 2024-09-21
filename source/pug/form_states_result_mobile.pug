@@ -2,7 +2,7 @@ extends _default
 
 block topbarStates
 	br.phone-hide
-	
+
 	.h-topbar-wrap.phone-hide
 		.h-fixed
 			.topbar-center.phone-hide
@@ -11,14 +11,14 @@ block topbarStates
 						label
 							input.checkbox(type="checkbox")
 							span.checkbox-view
-							span.checkbox-copy Даю согласие на 
+							span.checkbox-copy Даю согласие на
 								a(href="https://ya.ru/") обработку персональных данных
 					.captcha
-						img(src="../f/i/recaptcha.png" width="312" height="86")
+						img(src="f/i/recaptcha.png" width="312" height="86")
 					+btnBtn("Отправить").send
 				span.topbar-closer X
 			a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
-	
+
 	br.phone-hide
 
 	.h-topbar-wrap.phone-hide
@@ -30,7 +30,7 @@ block topbarStates
 			a.topbar-free-trial.phone-show(href="") Попробовать бесплатно
 
 
-block content 
+block content
 
 	.b-offer-wrap
 		.h-fixed
@@ -64,10 +64,10 @@ block content
 							label
 								input.checkbox(type="checkbox")
 								span.checkbox-view
-								span.checkbox-copy Даю согласие на 
+								span.checkbox-copy Даю согласие на
 									a(href="https://ya.ru/") обработку персональных данных
 					.captcha
-						img(src="../f/i/recaptcha.png" width="312" height="86")
+						img(src="f/i/recaptcha.png" width="312" height="86")
 					.offer-form__btn-wrap
 						+btnBtn("Отправить").send
 
@@ -92,14 +92,14 @@ block content
 					label
 						input.checkbox(type="checkbox")
 						span.checkbox-view
-						span.checkbox-copy Даю согласие на 
+						span.checkbox-copy Даю согласие на
 							a(href="https://ya.ru/") обработку персональных данных
 				.captcha
-					img(src="../f/i/recaptcha.png" width="312" height="86")
+					img(src="f/i/recaptcha.png" width="312" height="86")
 				+btnBtn("Отправить").send
 
 			form.integration-form(action="")
-				.integration-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас 
+				.integration-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас
 
 	.b-section-wrap.b-prices-wrap
 		.h-fixed
@@ -134,10 +134,10 @@ block content
 										label
 											input.checkbox(type="checkbox")
 											span.checkbox-view
-											span.checkbox-copy Даю согласие на 
+											span.checkbox-copy Даю согласие на
 												a(href="") обработку персональных данных
 								.captcha
-									img(src="../f/i/recaptcha.png" width="100%")
+									img(src="f/i/recaptcha.png" width="100%")
 								+btnBtn("Свяжитесь со мной")
 					li.result
 						.prices-list__card
@@ -155,7 +155,7 @@ block popup
 			.modal-popup-body
 				.h-fixed
 					form.reg(action="")
-						.reg-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас 
+						.reg-result Мы свяжемся с вами в ближайшее время и предложим лучшие уловия специально для вас
 			.modal-popup-footer
 				.h-fixed
 					+btn("Закрыть").with-border
